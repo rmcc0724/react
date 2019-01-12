@@ -1,0 +1,15 @@
+//Create a compnent names MyComponent from the default Component class
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+render() {
+//The return is always with in the render method with () and {} and must always be encapsulated within the <div> element
+    return (
+      <div>
+<h1>{"Hello React!"}</h1>
+</div>
+    )
+  }
+};
