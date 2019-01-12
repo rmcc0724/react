@@ -1,0 +1,46 @@
+class Application extends React.Component {
+  constructor(props) { 
+  super(props);
+this.state = {value: '', list: []};
+this.handleChange = this.handleChange.bind(this);
+this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+ handleChange(event) {
+  this.setState({value: event.target.value});
+}
+
+handleSubmit(event){
+  
+  if(!this.state.list.includes(this.state.value) && this.state.value !== '') {
+  const list = [...this.state.list, this.state.value];
+  this.setState({list: list});
+  console.log(list);
+  } 
+  else if (this.state.value === '') {    
+      console.log("Entry can not be blank!");  
+  }
+else if (this.state.list.includes(this.state.value)) {
+     console.log("This is a duplicate");   
+  }
+event.preventDefault();
+}
+  
+  render() {
+return (
+<div>
+        <form onSubmit={this.handleSubmit}>
+  <label>
+    Add List Item: 
+    <input type="text" value={this.state.value} onChange={this.handleChange}/>
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+  <ul>
+{this.state.list.map((item, index) => (<li key={index}>{item}</li>))}
+  </ul>
+  </div>
+      )
+  };
+};
+React.render(<Application/>, document.getElementById('app'));
