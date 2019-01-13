@@ -1,0 +1,20 @@
+
+//Create the Parent component TypesOfFood
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+      //Render the Fruits and Veggies components inside the TypesOfFood component
+<Fruits/>
+<Vegetables/>
+      </div>
+    );
+  }
+};
+
+// Here we render the TypesOfFood component to the DOM
+ReactDOM.render(<TypesOfFood/>, document.getElementById('challenge-node'));
