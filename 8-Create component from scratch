@@ -1,0 +1,14 @@
+// Create  MyComponent from the default Component
+class MyComponent extends React.Component {
+    constructor(props){
+        super(props)
+    }
+//Return the string below
+render() {
+    return (
+<div><h1>{"My First React Component!"}</h1></div>
+    )
+}
+}
+//Render to the DOM,be sure to have the <> around the component
+ ReactDOM.render(<MyComponent/>, document.getElementById('challenge-node'));
