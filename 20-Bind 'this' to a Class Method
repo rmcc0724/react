@@ -1,0 +1,28 @@
+//Purple  in the face with components
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+//Set the default state
+    this.state = {
+      itemCount: 0
+    };
+//Elementary binding stuff although the reason is interesting
+this.addItem = this.addItem.bind(this);
+  }
+
+//When we increase the value we use the same prop
+  addItem() {
+    this.setState({
+      itemCount: this.state.itemCount + 1
+    });
+  }
+  render() {
+    return (
+      <div>
+{/*Add the event listener to the JSX element*/}
+        <button onClick={this.addItem}>Click Me</button>
+        <h1>Current Item Count: {this.state.itemCount}</h1>
+      </div>
+    );
+  }
+};
